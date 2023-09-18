@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Advance Counter</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+
+<body>
+    <div>
+        <div class="min-vh-100 d-flex align-items-center justify-content-center">
+            <div class="crd text-center ">
+                <p class="zero text-center ff-inter fw-400 fs-36 mt-5">0</p>
+                <div class="d-flex  justify-content-center gap-4">
+                    <button class="add ff-inter fw-600 fs-16 ">Add One</button>
+                    <button class="one ff-inter fw-600 fs-16">Save</button>
+
+                </div>
+                <p class="value mt-4">Previous values</p>
+                <p class="nmbrs fw-400 fs-16 ff-inter" id="saver"></p>
+            </div>
+        </div>
+    </div>
+    <script src="./assets/js/add.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+
+    <script>
+        let P = document.querySelector("P")
+        let add = document.querySelector(".add")
+        let sub = document.querySelector(".sub")
+        let multi = document.querySelector(".multi")
+        let div = document.querySelector(".div")
+        let reset = document.querySelector(".reset")
+        let save = document.querySelector(".one")
+        let saver = document.querySelector("#saver")
+
+        console.log(P)
+
+        add.addEventListener("click", function () {
+            P.innerHTML = +P.innerHTML + 1;
+        })
+
+        save.addEventListener("click", function () {
+            if (P.innerHTML != 0) {
+                if (saver.innerHTML == 0) {
+                    saver.innerHTML = P.innerHTML
+                }
+                else if (saver.innerHTML != 0) {
+                    saver.innerHTML += "," + P.innerHTML
+                }
+            }
+            P.innerHTML = 0
+        })
+
+
+    </script>
+
+</body>
+
+</html>
